@@ -1,0 +1,6 @@
+{
+  "image": "registry.ltv.coffee:5000/vts_server:latest",
+  "networks": ["webproxy"],
+  "env_file": ["./vts/env/server/.env"],
+  "environment": ["CI=${CI}", "GIT_COMMIT=${GIT_COMMIT}"]
+}

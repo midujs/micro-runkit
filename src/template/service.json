@@ -1,0 +1,11 @@
+{
+  "image": "{{IMAGE}}",
+  "networks": ["net", "{{TRAEFIK_NETWORK}}"],
+  "command": ["yarn", "start:prod", "{{SERVICE}}", "--env"],
+  "secrets": [
+    {
+      "source": "{{SERVER_ENV}}",
+      "target": "/app/.env"
+    }
+  ]
+}

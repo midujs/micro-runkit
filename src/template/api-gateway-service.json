@@ -1,0 +1,20 @@
+{
+  "image": "{{IMAGE}}",
+  "networks": ["net", "{{TRAEFIK_NETWORK}}"],
+  "command": ["yarn", "start:prod", "{{SERVICE}}", "--env"],
+  "secrets": [
+    {
+      "source": "{{SERVER_ENV}}",
+      "target": "/app/.env"
+    }
+  ],
+  "deploy": {
+    "labels": [
+      "traefik.enable=true",
+      "traefik.port={{API_GATEWAY_PORT}}",
+      "traefik.protocol=http",
+      "traefik.frontend.rule=Host:{{DOMAIN}};PathPrefix:/api",
+      "traefik.webservice.frontend.entryPoints=https"
+    ]
+  }
+}

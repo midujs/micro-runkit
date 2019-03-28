@@ -1,0 +1,9 @@
+{
+  "version": "3.3",
+  "services": {},
+  "networks":
+    {
+      "net": { "driver": "overlay", "attachable": true },
+      "{{TRAEFIK_NETWORK}}": { "external": true },
+    },
+}

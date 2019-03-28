@@ -1,0 +1,13 @@
+{
+  "image": "{{IMAGE}}",
+  "networks": ["net", "{{TRAEFIK_NETWORK}}"],
+  "deploy": {
+    "labels": [
+      "traefik.enable=true",
+      "traefik.port=80",
+      "traefik.protocol=http",
+      "traefik.frontend.rule=Host:{{DOMAIN}}",
+      "traefik.webservice.frontend.entryPoints=https"
+    ]
+  }
+}
